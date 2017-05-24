@@ -13,6 +13,8 @@
 		D1EC6F2C1ED57E33001887EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1EC6F2A1ED57E33001887EE /* Main.storyboard */; };
 		D1EC6F2E1ED57E33001887EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1EC6F2D1ED57E33001887EE /* Assets.xcassets */; };
 		D1EC6F311ED57E33001887EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1EC6F2F1ED57E33001887EE /* LaunchScreen.storyboard */; };
+		D1EC6F3C1ED5D4F7001887EE /* ParkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EC6F3A1ED5D4F7001887EE /* ParkTableViewCell.m */; };
+		D1EC6F3D1ED5D4F7001887EE /* ParkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1EC6F3B1ED5D4F7001887EE /* ParkTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,9 @@
 		D1EC6F2D1ED57E33001887EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1EC6F301ED57E33001887EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1EC6F321ED57E33001887EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1EC6F391ED5D4F7001887EE /* ParkTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkTableViewCell.h; sourceTree = "<group>"; };
+		D1EC6F3A1ED5D4F7001887EE /* ParkTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkTableViewCell.m; sourceTree = "<group>"; };
+		D1EC6F3B1ED5D4F7001887EE /* ParkTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParkTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +65,9 @@
 			children = (
 				D1EC6F241ED57E33001887EE /* AppDelegate.h */,
 				D1EC6F251ED57E33001887EE /* AppDelegate.m */,
-				D1EC6F271ED57E33001887EE /* ViewController.h */,
-				D1EC6F281ED57E33001887EE /* ViewController.m */,
+				D1EC6F3F1ED5D50F001887EE /* Controller */,
+				D1EC6F3E1ED5D505001887EE /* Model */,
+				D1EC6F381ED5D4BD001887EE /* View */,
 				D1EC6F2A1ED57E33001887EE /* Main.storyboard */,
 				D1EC6F2D1ED57E33001887EE /* Assets.xcassets */,
 				D1EC6F2F1ED57E33001887EE /* LaunchScreen.storyboard */,
@@ -77,6 +83,32 @@
 				D1EC6F221ED57E33001887EE /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D1EC6F381ED5D4BD001887EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D1EC6F391ED5D4F7001887EE /* ParkTableViewCell.h */,
+				D1EC6F3A1ED5D4F7001887EE /* ParkTableViewCell.m */,
+				D1EC6F3B1ED5D4F7001887EE /* ParkTableViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D1EC6F3E1ED5D505001887EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D1EC6F3F1ED5D50F001887EE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D1EC6F271ED57E33001887EE /* ViewController.h */,
+				D1EC6F281ED57E33001887EE /* ViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +173,7 @@
 				D1EC6F311ED57E33001887EE /* LaunchScreen.storyboard in Resources */,
 				D1EC6F2E1ED57E33001887EE /* Assets.xcassets in Resources */,
 				D1EC6F2C1ED57E33001887EE /* Main.storyboard in Resources */,
+				D1EC6F3D1ED5D4F7001887EE /* ParkTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +187,7 @@
 				D1EC6F291ED57E33001887EE /* ViewController.m in Sources */,
 				D1EC6F261ED57E33001887EE /* AppDelegate.m in Sources */,
 				D1EC6F231ED57E33001887EE /* main.m in Sources */,
+				D1EC6F3C1ED5D4F7001887EE /* ParkTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +346,7 @@
 				D1EC6F371ED57E33001887EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
