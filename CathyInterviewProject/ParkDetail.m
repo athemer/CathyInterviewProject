@@ -11,8 +11,7 @@
 
 @implementation ParkDetail
 
-
-- (id)initName: (NSString *)name parkName: (NSString *)parkName idLabel: (int)idLabel introduction: (NSString *)introduction image: (UIImage *)image {
+- (id)initName: (NSString *)name parkName: (NSString *)parkName idLabel: (NSString *)idLabel introduction: (NSString *)introduction imageURL: (NSURL *)imageURL {
 
     self = [super init];
     if (self) {
@@ -21,7 +20,7 @@
         _parkName = parkName;
         _idLabel = idLabel;
         _introduction = introduction;
-        _image = image;
+        _imageURL = imageURL;
 
     }
 

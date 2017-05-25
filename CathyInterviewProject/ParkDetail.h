@@ -11,16 +11,16 @@
 
 @interface ParkDetail : NSObject
 
-@property int idLabel;
+@property NSString *idLabel;
 
 @property NSString *parkName;
 
 @property NSString *name;
 
-@property UIImage *image;
+@property NSURL *imageURL;
 
 @property NSString *introduction;
 
-- (id)initName: (NSString *)name parkName: (NSString *)parkName idLabel: (int)idLabel introduction: (NSString *)introduction image: (UIImage *)image;
+- (id)initName: (NSString *)name parkName: (NSString *)parkName idLabel: (NSString *)idLabel introduction: (NSString *)introduction imageURL: (NSURL *)imageURL;
 
 @end

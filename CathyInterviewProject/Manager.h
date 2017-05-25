@@ -23,8 +23,12 @@
 
 @interface Manager : NSObject <NSURLSessionDelegate, NSURLSessionDelegate, NSURLSessionTaskDelegate>
 
+
+@property (weak, nonatomic) id <ManagerDelegate> delegate;
 @property (strong, nonatomic) NSMutableArray<ParkDetail *> *detailArray;
 
 + (instancetype)sharedInstance;
+
+-(void) getParkDetailData;
 
 @end

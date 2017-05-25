@@ -17,6 +17,7 @@
 		D1EC6F3D1ED5D4F7001887EE /* ParkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1EC6F3B1ED5D4F7001887EE /* ParkTableViewCell.xib */; };
 		D1EC6F4A1ED5DC42001887EE /* Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EC6F491ED5DC42001887EE /* Manager.m */; };
 		D1EC6F4D1ED5DE0B001887EE /* ParkDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EC6F4C1ED5DE0B001887EE /* ParkDetail.m */; };
+		D1EC6F501ED6EB5F001887EE /* ParkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EC6F4F1ED6EB5E001887EE /* ParkTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		D1EC6F491ED5DC42001887EE /* Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Manager.m; sourceTree = "<group>"; };
 		D1EC6F4B1ED5DDF9001887EE /* ParkDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkDetail.h; sourceTree = "<group>"; };
 		D1EC6F4C1ED5DE0B001887EE /* ParkDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkDetail.m; sourceTree = "<group>"; };
+		D1EC6F4E1ED6EB5E001887EE /* ParkTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkTableViewController.h; sourceTree = "<group>"; };
+		D1EC6F4F1ED6EB5E001887EE /* ParkTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 			children = (
 				D1EC6F271ED57E33001887EE /* ViewController.h */,
 				D1EC6F281ED57E33001887EE /* ViewController.m */,
+				D1EC6F4E1ED6EB5E001887EE /* ParkTableViewController.h */,
+				D1EC6F4F1ED6EB5E001887EE /* ParkTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			files = (
 				D1EC6F291ED57E33001887EE /* ViewController.m in Sources */,
 				D1EC6F261ED57E33001887EE /* AppDelegate.m in Sources */,
+				D1EC6F501ED6EB5F001887EE /* ParkTableViewController.m in Sources */,
 				D1EC6F231ED57E33001887EE /* main.m in Sources */,
 				D1EC6F4A1ED5DC42001887EE /* Manager.m in Sources */,
 				D1EC6F4D1ED5DE0B001887EE /* ParkDetail.m in Sources */,
