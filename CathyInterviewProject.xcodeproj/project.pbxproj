@@ -15,6 +15,8 @@
 		D1EC6F311ED57E33001887EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1EC6F2F1ED57E33001887EE /* LaunchScreen.storyboard */; };
 		D1EC6F3C1ED5D4F7001887EE /* ParkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EC6F3A1ED5D4F7001887EE /* ParkTableViewCell.m */; };
 		D1EC6F3D1ED5D4F7001887EE /* ParkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1EC6F3B1ED5D4F7001887EE /* ParkTableViewCell.xib */; };
+		D1EC6F4A1ED5DC42001887EE /* Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EC6F491ED5DC42001887EE /* Manager.m */; };
+		D1EC6F4D1ED5DE0B001887EE /* ParkDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EC6F4C1ED5DE0B001887EE /* ParkDetail.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,10 @@
 		D1EC6F391ED5D4F7001887EE /* ParkTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkTableViewCell.h; sourceTree = "<group>"; };
 		D1EC6F3A1ED5D4F7001887EE /* ParkTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkTableViewCell.m; sourceTree = "<group>"; };
 		D1EC6F3B1ED5D4F7001887EE /* ParkTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParkTableViewCell.xib; sourceTree = "<group>"; };
+		D1EC6F481ED5DC34001887EE /* Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
+		D1EC6F491ED5DC42001887EE /* Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Manager.m; sourceTree = "<group>"; };
+		D1EC6F4B1ED5DDF9001887EE /* ParkDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkDetail.h; sourceTree = "<group>"; };
+		D1EC6F4C1ED5DE0B001887EE /* ParkDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkDetail.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,10 @@
 		D1EC6F3E1ED5D505001887EE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D1EC6F481ED5DC34001887EE /* Manager.h */,
+				D1EC6F491ED5DC42001887EE /* Manager.m */,
+				D1EC6F4B1ED5DDF9001887EE /* ParkDetail.h */,
+				D1EC6F4C1ED5DE0B001887EE /* ParkDetail.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -187,6 +197,8 @@
 				D1EC6F291ED57E33001887EE /* ViewController.m in Sources */,
 				D1EC6F261ED57E33001887EE /* AppDelegate.m in Sources */,
 				D1EC6F231ED57E33001887EE /* main.m in Sources */,
+				D1EC6F4A1ED5DC42001887EE /* Manager.m in Sources */,
+				D1EC6F4D1ED5DE0B001887EE /* ParkDetail.m in Sources */,
 				D1EC6F3C1ED5D4F7001887EE /* ParkTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

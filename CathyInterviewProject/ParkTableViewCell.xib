@@ -83,7 +83,7 @@
                 <outlet property="name" destination="LNl-wJ-d9g" id="86B-bx-zr1"/>
                 <outlet property="parkName" destination="48u-Ny-TPI" id="wUG-xq-yRJ"/>
             </connections>
-            <point key="canvasLocation" x="53" y="201"/>
+            <point key="canvasLocation" x="52.5" y="201"/>
         </tableViewCell>
     </objects>
 </document>
