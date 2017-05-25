@@ -11,7 +11,7 @@
 #import "ParkDetail.h"
 #import "ParkTableViewCell.h"
 
-@interface ParkTableViewController : UITableViewController
+@interface ParkTableViewController : UITableViewController <ManagerDelegate>
 
 @property (strong, nonatomic) NSArray <ParkDetail *>* parkDetail;
 

@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    Manager.sharedInstance.delegate = self;
+
     [Manager.sharedInstance getParkDetailData];
 
     [self.tableView registerNib:[UINib nibWithNibName: @"ParkTableViewCell"
@@ -51,6 +53,11 @@
     return cell;
 }
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    return 300;
+}
 
 /*
 // Override to support conditional editing of the table view.
