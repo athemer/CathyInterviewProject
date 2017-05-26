@@ -14,8 +14,7 @@
     [super awakeFromNib];
     // Initialization code
 
-    self.imageView.image = [UIImage imageNamed:@"loading"];
-    [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [self.image setContentMode:UIViewContentModeScaleAspectFit];
 
 
 }

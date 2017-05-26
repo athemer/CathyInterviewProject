@@ -102,8 +102,6 @@
 
                                                                 NSURL *imageURL = [NSURL URLWithString: imageURLString];
 
-//                                                                NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-
                                                                 ParkDetail *partDetail = [[ParkDetail alloc]initName:name parkName:parkName idLabel:idLabel introduction:introduction image: imageURL];
 
                                                                 [self.detailArray addObject:partDetail];

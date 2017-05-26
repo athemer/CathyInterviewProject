@@ -25,6 +25,12 @@
                                                bundle: nil]
          forCellReuseIdentifier: @"ParkTableViewCell"];
 
+    self.tableView.allowsSelection = NO;
+
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+
+    self.tableView.estimatedRowHeight = 300;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,18 +58,26 @@
     cell.parkName.text = self.parkDetail[indexPath.row].parkName;
     cell.idLabel.text = self.parkDetail[indexPath.row].idLabel;
 
-    NSData *data = [NSData dataWithContentsOfURL:self.parkDetail[indexPath.row].image];
+    //prevent imageView from flickering
+    cell.image.image = [UIImage imageNamed:@"loading"];
 
-    cell.imageView.image = [[UIImage alloc] initWithData:data];
-    
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+
+        NSData *data = [NSData dataWithContentsOfURL: self.parkDetail[indexPath.row].image];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+            ParkTableViewCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
+            updateCell.image.image = [UIImage imageWithData: data];
+        });
+
+    });
+
     return cell;
 }
 
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    return 300;
-}
 
 /*
 // Override to support conditional editing of the table view.
