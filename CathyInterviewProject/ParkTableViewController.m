@@ -19,7 +19,7 @@
 
     Manager.sharedInstance.delegate = self;
 
-    [Manager.sharedInstance getParkDetailData];
+    [Manager.sharedInstance getParkDetailDataWithOffset: 0];
 
     [self.tableView registerNib:[UINib nibWithNibName: @"ParkTableViewCell"
                                                bundle: nil]
@@ -48,7 +48,13 @@
 
 
     cell.name.text = self.parkDetail[indexPath.row].name;
+    cell.introduction.text = self.parkDetail[indexPath.row].introduction;
+    cell.parkName.text = self.parkDetail[indexPath.row].parkName;
+    cell.idLabel.text = self.parkDetail[indexPath.row].idLabel;
 
+    NSData *data = [NSData dataWithContentsOfURL:self.parkDetail[indexPath.row].image];
+
+    cell.imageView.image = [[UIImage alloc] initWithData:data];
     
     return cell;
 }
@@ -103,6 +109,21 @@
 }
 */
 
+- (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    NSInteger lastElement = self.parkDetail.count - 1;
+
+
+
+    if (indexPath.row == lastElement && self.parkDetail.count != 0) {
+
+        [Manager.sharedInstance getParkDetailDataWithOffset: self.parkDetail.count];
+
+        NSLog(@" ===== Count %lu ===== ", self.parkDetail.count);
+
+    }
+
+}
 
 #pragma mark - ManagerDelegate
 

@@ -27,8 +27,9 @@
 @property (weak, nonatomic) id <ManagerDelegate> delegate;
 @property (strong, nonatomic) NSMutableArray<ParkDetail *> *detailArray;
 
+
 + (instancetype)sharedInstance;
 
--(void) getParkDetailData;
+- (void) getParkDetailDataWithOffset: (NSUInteger)offset ;
 
 @end

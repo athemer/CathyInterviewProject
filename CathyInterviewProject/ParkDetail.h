@@ -17,10 +17,10 @@
 
 @property NSString *name;
 
-@property NSURL *imageURL;
+@property NSURL *image;
 
 @property NSString *introduction;
 
-- (id)initName: (NSString *)name parkName: (NSString *)parkName idLabel: (NSString *)idLabel introduction: (NSString *)introduction imageURL: (NSURL *)imageURL;
+- (id)initName: (NSString *)name parkName: (NSString *)parkName idLabel: (NSString *)idLabel introduction: (NSString *)introduction image: (NSURL *)image;
 
 @end

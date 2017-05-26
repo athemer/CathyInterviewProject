@@ -13,6 +13,11 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+
+    self.imageView.image = [UIImage imageNamed:@"loading"];
+    [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
+
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

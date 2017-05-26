@@ -40,14 +40,24 @@
 }
 
 
--(void) getParkDetailData {
+- (void) getParkDetailDataWithOffset: (NSUInteger) offset {
 
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&rid=bf073841-c734-49bf-a97f-3757a6013812&limit=30&offset=60"]
+
+    NSString *offsetString = [NSString stringWithFormat:@"&offset=%lu", offset] ;
+
+    NSURL *url = [[NSURL alloc] initWithString: [NSString stringWithFormat:@"http://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&rid=bf073841-c734-49bf-a97f-3757a6013812&limit=30%@", offsetString]];
+
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: url
                                                            cachePolicy: NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval: 10.0];
-    [request setHTTPMethod:@"GET"];
+    [request setHTTPMethod: @"GET"];
+
+
 
     NSURLSession *session = [NSURLSession sharedSession];
+
+
+
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest: request
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                     if (error) {
@@ -84,17 +94,21 @@
 
                                                             for (NSDictionary * detail in results) {
 
-                                                                NSString * name = [detail objectForKey:@"Name"];
-                                                                NSString * parkName = [detail objectForKey:@"ParkName"];
-                                                                NSString * idLabel = [detail objectForKey:@"_id"];
-                                                                NSURL *imageURL = [detail objectForKey:@"Image"];
-                                                                NSString * introduction = [detail objectForKey:@"Introduction"];
+                                                                NSString * name = [detail objectForKey: @"Name"];
+                                                                NSString * parkName = [detail objectForKey: @"ParkName"];
+                                                                NSString * idLabel = [detail objectForKey: @"_id"];
+                                                                NSString * imageURLString = [detail objectForKey: @"Image"];
+                                                                NSString * introduction = [detail objectForKey: @"Introduction"];
 
-                                                                ParkDetail *partDetail = [[ParkDetail alloc]initName:name parkName:parkName idLabel:idLabel introduction:introduction imageURL:imageURL];
+                                                                NSURL *imageURL = [NSURL URLWithString: imageURLString];
+
+//                                                                NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+
+                                                                ParkDetail *partDetail = [[ParkDetail alloc]initName:name parkName:parkName idLabel:idLabel introduction:introduction image: imageURL];
 
                                                                 [self.detailArray addObject:partDetail];
 
-                                                                NSLog(@"print name %@", name);
+                                                                NSLog(@"print name %@", idLabel);
 
                                                             }
 
