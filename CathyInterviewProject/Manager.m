@@ -60,6 +60,7 @@
 
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest: request
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+
                                                     if (error) {
 
                                                         NSLog(@"%@", error);
@@ -118,6 +119,24 @@
                                                     }
                                                 }];
     [dataTask resume];
+
+}
+
+- (void) addLoadingView:(UIActivityIndicatorView *)activityIndicator andTheViewToShowIn:(UIView *)viewToShowIn {
+
+    activityIndicator =
+    [[UIActivityIndicatorView alloc]
+     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [activityIndicator setCenter:viewToShowIn.center];
+    [activityIndicator startAnimating];
+    [viewToShowIn addSubview:activityIndicator];
+
+}
+
+- (void) removeLoadingView: (UIActivityIndicatorView *)activityIndicator andTheViewToShowIn: (UIView *)viewToShowIn {
+
+    [activityIndicator removeFromSuperview];
+    activityIndicator = nil;
 
 }
 

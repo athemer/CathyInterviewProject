@@ -16,7 +16,6 @@
 
     [self.image setContentMode:UIViewContentModeScaleAspectFit];
 
-
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

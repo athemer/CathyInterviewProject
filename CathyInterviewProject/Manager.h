@@ -32,4 +32,8 @@
 
 - (void) getParkDetailDataWithOffset: (NSUInteger)offset ;
 
+- (void) addLoadingView:(UIActivityIndicatorView *)activityIndicator andTheViewToShowIn:(UIView *)viewToShowIn;
+
+- (void) removeLoadingView: (UIActivityIndicatorView *)activityIndicator andTheViewToShowIn: (UIView *)viewToShowIn;
+
 @end
