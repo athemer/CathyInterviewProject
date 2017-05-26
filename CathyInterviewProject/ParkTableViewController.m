@@ -7,6 +7,8 @@
 //
 
 #import "ParkTableViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+
 
 @interface ParkTableViewController ()
 
@@ -20,6 +22,7 @@
     Manager.sharedInstance.delegate = self;
 
     [Manager.sharedInstance getParkDetailDataWithOffset: 0];
+
 
     [self.tableView registerNib:[UINib nibWithNibName: @"ParkTableViewCell"
                                                bundle: nil]
@@ -58,21 +61,25 @@
     cell.parkName.text = self.parkDetail[indexPath.row].parkName;
     cell.idLabel.text = self.parkDetail[indexPath.row].idLabel;
 
-    //prevent imageView from flickering
-    cell.image.image = [UIImage imageNamed:@"loading"];
 
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//
+//        NSData *data = [NSData dataWithContentsOfURL: self.parkDetail[indexPath.row].image];
+//
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//
+//            ParkTableViewCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
+//            updateCell.image.image = [UIImage imageWithData: data];
+//        });
+//
+//    });
 
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
 
-        NSData *data = [NSData dataWithContentsOfURL: self.parkDetail[indexPath.row].image];
-
-        dispatch_async(dispatch_get_main_queue(), ^{
-
-            ParkTableViewCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
-            updateCell.image.image = [UIImage imageWithData: data];
-        });
+        [cell.image sd_setImageWithURL: self.parkDetail[indexPath.row].image];
 
     });
+
 
     return cell;
 }
@@ -134,6 +141,30 @@
         [Manager.sharedInstance getParkDetailDataWithOffset: self.parkDetail.count];
 
         NSLog(@" ===== Count %lu ===== ", self.parkDetail.count);
+
+    }
+
+
+    if (indexPath.row == 295) {
+
+        UIAlertController * alert=  [UIAlertController
+                                      alertControllerWithTitle:@"最後一筆"
+                                      message:@"已是最後一筆資料"
+                                      preferredStyle:UIAlertControllerStyleAlert];
+
+
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"了解"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+
+                                [alert dismissViewControllerAnimated:YES completion:nil];
+
+                             }];
+        [alert addAction:ok];
+
+        [self presentViewController:alert animated:YES completion:nil];
 
     }
 

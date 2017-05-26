@@ -17,9 +17,13 @@
 		D1EC6F4A1ED5DC42001887EE /* Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EC6F491ED5DC42001887EE /* Manager.m */; };
 		D1EC6F4D1ED5DE0B001887EE /* ParkDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EC6F4C1ED5DE0B001887EE /* ParkDetail.m */; };
 		D1EC6F501ED6EB5F001887EE /* ParkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EC6F4F1ED6EB5E001887EE /* ParkTableViewController.m */; };
+		F87BCD41C61AF25AA225150F /* libPods-CathyInterviewProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 806A776A32E28FCE719632F4 /* libPods-CathyInterviewProject.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		60C878B50DF8B174F88C98E7 /* Pods-CathyInterviewProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CathyInterviewProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CathyInterviewProject/Pods-CathyInterviewProject.debug.xcconfig"; sourceTree = "<group>"; };
+		806A776A32E28FCE719632F4 /* libPods-CathyInterviewProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CathyInterviewProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93CDE470D1EE119D37EAE646 /* Pods-CathyInterviewProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CathyInterviewProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-CathyInterviewProject/Pods-CathyInterviewProject.release.xcconfig"; sourceTree = "<group>"; };
 		D1EC6F1E1ED57E33001887EE /* CathyInterviewProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CathyInterviewProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1EC6F221ED57E33001887EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D1EC6F241ED57E33001887EE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -44,17 +48,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F87BCD41C61AF25AA225150F /* libPods-CathyInterviewProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9CB24488BE5033CD7C9473CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				806A776A32E28FCE719632F4 /* libPods-CathyInterviewProject.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D1EC6F151ED57E33001887EE = {
 			isa = PBXGroup;
 			children = (
 				D1EC6F201ED57E33001887EE /* CathyInterviewProject */,
 				D1EC6F1F1ED57E33001887EE /* Products */,
+				D4FB51DCAAE24ACBB93FC2CD /* Pods */,
+				9CB24488BE5033CD7C9473CD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +136,15 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		D4FB51DCAAE24ACBB93FC2CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				60C878B50DF8B174F88C98E7 /* Pods-CathyInterviewProject.debug.xcconfig */,
+				93CDE470D1EE119D37EAE646 /* Pods-CathyInterviewProject.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -128,9 +152,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1EC6F351ED57E33001887EE /* Build configuration list for PBXNativeTarget "CathyInterviewProject" */;
 			buildPhases = (
+				405AB4E21FDD5C42387A73AD /* [CP] Check Pods Manifest.lock */,
 				D1EC6F1A1ED57E33001887EE /* Sources */,
 				D1EC6F1B1ED57E33001887EE /* Frameworks */,
 				D1EC6F1C1ED57E33001887EE /* Resources */,
+				E977FCBA0E2FAFEF50568680 /* [CP] Embed Pods Frameworks */,
+				82EFBFEB574534156BDE519E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,6 +215,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		405AB4E21FDD5C42387A73AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		82EFBFEB574534156BDE519E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CathyInterviewProject/Pods-CathyInterviewProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E977FCBA0E2FAFEF50568680 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CathyInterviewProject/Pods-CathyInterviewProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D1EC6F1A1ED57E33001887EE /* Sources */ = {
@@ -317,6 +392,7 @@
 		};
 		D1EC6F361ED57E33001887EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60C878B50DF8B174F88C98E7 /* Pods-CathyInterviewProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V7ACRS83M5;
@@ -329,6 +405,7 @@
 		};
 		D1EC6F371ED57E33001887EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93CDE470D1EE119D37EAE646 /* Pods-CathyInterviewProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V7ACRS83M5;

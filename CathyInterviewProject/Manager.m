@@ -122,22 +122,5 @@
 
 }
 
-- (void) addLoadingView:(UIActivityIndicatorView *)activityIndicator andTheViewToShowIn:(UIView *)viewToShowIn {
-
-    activityIndicator =
-    [[UIActivityIndicatorView alloc]
-     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    [activityIndicator setCenter:viewToShowIn.center];
-    [activityIndicator startAnimating];
-    [viewToShowIn addSubview:activityIndicator];
-
-}
-
-- (void) removeLoadingView: (UIActivityIndicatorView *)activityIndicator andTheViewToShowIn: (UIView *)viewToShowIn {
-
-    [activityIndicator removeFromSuperview];
-    activityIndicator = nil;
-
-}
 
 @end
