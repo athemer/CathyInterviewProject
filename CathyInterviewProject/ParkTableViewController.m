@@ -76,7 +76,9 @@
 
     dispatch_async(dispatch_get_main_queue(), ^{
 
-        [cell.image sd_setImageWithURL: self.parkDetail[indexPath.row].image];
+//        [cell.image sd_setImageWithURL: self.parkDetail[indexPath.row].image];
+
+        [cell.image sd_setImageWithURL: self.parkDetail[indexPath.row].image placeholderImage: [UIImage imageNamed: @"loading"]];
 
     });
 
@@ -150,7 +152,7 @@
         UIAlertController * alert=  [UIAlertController
                                       alertControllerWithTitle:@"最後一筆"
                                       message:@"已是最後一筆資料"
-                                      preferredStyle:UIAlertControllerStyleAlert];
+                                      preferredStyle: UIAlertControllerStyleAlert];
 
 
         UIAlertAction* ok = [UIAlertAction
@@ -159,7 +161,7 @@
                              handler:^(UIAlertAction * action)
                              {
 
-                                [alert dismissViewControllerAnimated:YES completion:nil];
+                                [alert dismissViewControllerAnimated: YES completion:nil];
 
                              }];
         [alert addAction:ok];
