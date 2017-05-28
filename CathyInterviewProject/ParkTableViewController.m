@@ -34,6 +34,20 @@
 
     self.tableView.estimatedRowHeight = 300;
 
+//    UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+//
+//
+//
+//
+//    [self.tableView addSubview: activityView];
+//    [self.tableView bringSubviewToFront:activityView];
+//
+//
+//    [activityView setFrame: CGRectMake(self.view.frame.size.width / 2, self.view.frame.size.height / 2, 30, 10)];
+//
+//    [activityView startAnimating];
+
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,21 +76,7 @@
     cell.idLabel.text = self.parkDetail[indexPath.row].idLabel;
 
 
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//
-//        NSData *data = [NSData dataWithContentsOfURL: self.parkDetail[indexPath.row].image];
-//
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//
-//            ParkTableViewCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
-//            updateCell.image.image = [UIImage imageWithData: data];
-//        });
-//
-//    });
-
     dispatch_async(dispatch_get_main_queue(), ^{
-
-//        [cell.image sd_setImageWithURL: self.parkDetail[indexPath.row].image];
 
         [cell.image sd_setImageWithURL: self.parkDetail[indexPath.row].image placeholderImage: [UIImage imageNamed: @"loading"]];
 
@@ -147,7 +147,7 @@
     }
 
 
-    if (indexPath.row == 295) {
+    if (indexPath.row == 294) {
 
         UIAlertController * alert=  [UIAlertController
                                       alertControllerWithTitle:@"最後一筆"
